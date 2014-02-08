@@ -22,6 +22,9 @@ def summary(logfile, time_format):
   "show a summary of all projects"
 
   def output(summary):
+    if len(summary) == 0:
+      print '-'
+      return
     width = max([len(p[0]) for p in summary]) + 3
     print '\n'.join([
       "%s%s%s" % (p[0], ' ' * (width - len(p[0])),
